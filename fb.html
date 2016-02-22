@@ -16,13 +16,581 @@
     
     <!-- JS -->
     <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
-		<script type="text/javascript" src="js/feedback_layout_insp.js"></script>
-		<script type="text/javascript" src="js/popup_insp.js"></script>
-		<script type="text/javascript" src="js/validate.js"></script>
+    <script type="text/javascript" src="js/feedback_layout_insp.js"></script>
+    <script type="text/javascript" src="js/popup_insp.js"></script>
+    <script type="text/javascript" src="js/validate.js"></script>
     <script type="text/javascript" src="js/jquery.form-defaults.js"></script>
     <script type="text/javascript" src="js/jquery.textareaCounter.plugin.js"></script>
     
+    <!-- Light box JS -->
+    <script type="text/javascript">
+        function fcone() {
+        	document.getElementById('light').style.display = 'block';
+                document.getElementById('fade').style.display = 'block';
+        } 
+    </script>
     
+    <!-- Word count JS & Some form style initialize -->
+        <script type="text/javascript">
+            var info;
+            $(document).ready(function () {
+                var options = {
+                    'maxCharacterSize': 350,
+                    'originalStyle': 'originalTextareaInfo',
+                    'warningStyle': 'warningTextareaInfo',
+                    'warningNumber': 40,
+                    'displayFormat': '#input Characters 已输入字数 | #left Characters Left 所剩字数 | #words Words'
+                };
+                
+                $('#goodTxt208').textareaCount(options); $('#badTxt208').textareaCount(options);
+                $('#goodTxt218').textareaCount(options); $('#badTxt218').textareaCount(options);
+                $('#goodTxt228').textareaCount(options); $('#badTxt228').textareaCount(options);
+                $('#goodTxt238').textareaCount(options); $('#badTxt238').textareaCount(options);
+                $('#goodTxt248').textareaCount(options); $('#badTxt248').textareaCount(options);
+                $('#goodTxt258').textareaCount(options); $('#badTxt258').textareaCount(options);
+		$('#goodTxt268').textareaCount(options); $('#badTxt268').textareaCount(options);
+		$('#Field278').textareaCount(options);
+
+                //initialize the margin between questions
+                document.getElementById('chkGoodTxt208').style.display = "none"; document.getElementById('chkBadTxt208').style.display = "none";
+                document.getElementById('chkGoodTxt218').style.display = "none"; document.getElementById('chkBadTxt218').style.display = "none";
+                document.getElementById('chkGoodTxt228').style.display = "none"; document.getElementById('chkBadTxt228').style.display = "none";
+                document.getElementById('chkGoodTxt238').style.display = "none"; document.getElementById('chkBadTxt238').style.display = "none";
+                document.getElementById('chkGoodTxt248').style.display = "none"; document.getElementById('chkBadTxt248').style.display = "none";
+                document.getElementById('chkGoodTxt258').style.display = "none"; document.getElementById('chkBadTxt258').style.display = "none";
+		document.getElementById('chkGoodTxt268').style.display = "none"; document.getElementById('chkBadTxt268').style.display = "none";
+		document.getElementById('chkTxt278').style.display = "block"; 
+            });
+	</script>
+        
+        <script type="text/javascript">
+            // solve the issue for background color not showing for textarea on Chrome and Safari
+            if ((navigator.appVersion.indexOf("chrome") != -1) || (navigator.appVersion.indexOf("safari") != -1)) {
+                //208
+                function addBgFocusedGoodForChromeSafari208() { $(this.foli208).removeClass("focused"); $(this.foli208).removeClass("focusedBad"); $(this.foli208).addClass("focusedGood"); }
+                function addBgFocusedForChromeSafari208() { $(this.foli208).removeClass("focusedGood"); $(this.foli208).removeClass("focusedBad"); $(this.foli208).addClass("focused"); }
+                function addBgFocusedBadForChromeSafari208() { $(this.foli208).removeClass("focusedGood"); $(this.foli208).removeClass("focused"); $(this.foli208).addClass("focusedBad"); }
+                //218
+                function addBgFocusedGoodForChromeSafari218() { $(this.foli218).removeClass("focused"); $(this.foli218).removeClass("focusedBad"); $(this.foli218).addClass("focusedGood"); }
+                function addBgFocusedForChromeSafari218() { $(this.foli218).removeClass("focusedGood"); $(this.foli218).removeClass("focusedBad"); $(this.foli218).addClass("focused"); }
+                function addBgFocusedBadForChromeSafari218() { $(this.foli218).removeClass("focusedGood"); $(this.foli218).removeClass("focused"); $(this.foli218).addClass("focusedBad"); }
+                //228
+                function addBgFocusedGoodForChromeSafari228() { $(this.foli228).removeClass("focused"); $(this.foli228).removeClass("focusedBad"); $(this.foli228).addClass("focusedGood"); }
+                function addBgFocusedForChromeSafari228() { $(this.foli228).removeClass("focusedGood"); $(this.foli228).removeClass("focusedBad"); $(this.foli228).addClass("focused"); }
+                function addBgFocusedBadForChromeSafari228() { $(this.foli228).removeClass("focusedGood"); $(this.foli228).removeClass("focused"); $(this.foli228).addClass("focusedBad"); }
+                //238
+                function addBgFocusedGoodForChromeSafari238() { $(this.foli238).removeClass("focused"); $(this.foli238).removeClass("focusedBad"); $(this.foli238).addClass("focusedGood"); }
+                function addBgFocusedForChromeSafari238() { $(this.foli238).removeClass("focusedGood"); $(this.foli238).removeClass("focusedBad"); $(this.foli238).addClass("focused"); }
+                function addBgFocusedBadForChromeSafari238() { $(this.foli238).removeClass("focusedGood"); $(this.foli238).removeClass("focused"); $(this.foli238).addClass("focusedBad"); }
+                //248
+                function addBgFocusedGoodForChromeSafari248() { $(this.foli248).removeClass("focused"); $(this.foli248).removeClass("focusedBad"); $(this.foli248).addClass("focusedGood"); }
+                function addBgFocusedForChromeSafari248() { $(this.foli248).removeClass("focusedGood"); $(this.foli248).removeClass("focusedBad"); $(this.foli248).addClass("focused"); }
+                function addBgFocusedBadForChromeSafari248() { $(this.foli248).removeClass("focusedGood"); $(this.foli248).removeClass("focused"); $(this.foli248).addClass("focusedBad"); }
+                //258
+                function addBgFocusedGoodForChromeSafari258() { $(this.foli258).removeClass("focused"); $(this.foli258).removeClass("focusedBad"); $(this.foli258).addClass("focusedGood"); }
+                function addBgFocusedForChromeSafari258() { $(this.foli258).removeClass("focusedGood"); $(this.foli258).removeClass("focusedBad"); $(this.foli258).addClass("focused"); }
+                function addBgFocusedBadForChromeSafari258() { $(this.foli258).removeClass("focusedGood"); $(this.foli258).removeClass("focused"); $(this.foli258).addClass("focusedBad"); }
+                //268
+                function addBgFocusedGoodForChromeSafari268() { $(this.foli268).removeClass("focused"); $(this.foli268).removeClass("focusedBad"); $(this.foli268).addClass("focusedGood"); }
+                function addBgFocusedForChromeSafari268() { $(this.foli268).removeClass("focusedGood"); $(this.foli268).removeClass("focusedBad"); $(this.foli268).addClass("focused"); }
+                function addBgFocusedBadForChromeSafari268() { $(this.foli268).removeClass("focusedGood"); $(this.foli268).removeClass("focused"); $(this.foli268).addClass("focusedBad"); }
+				//278
+                function addBgFocusedForChromeSafari278() { $(this.foli278).removeClass("focusedGood"); $(this.foli278).removeClass("focusedBad"); $(this.foli278).addClass("focused"); }
+            }
+        </script>
+        
+        <script type="text/javascript">
+            // js for word count not working well for scale comments textarea, so below js was made for displaying consistently with some added css.
+            // be aware that $(this.id) will not work in firefox, so please use document.getElementById to get the div id.
+            // for 208
+            function removeCounter208() { document.getElementById("chkGoodTxt208").style.display = "none"; document.getElementById("chkBadTxt208").style.display = "none"; }
+            function addCounterGood208() {
+                document.getElementById("chkGoodTxt208").style.display = "block";
+				if (navigator.appVersion.indexOf("MSIE 7.") != -1) { 
+					if (!document.addEventListener) {
+						$(this.chkGoodTxt208.lastChild).css({ display: "none" });
+					}
+				}
+            }
+            function addCounterBad208() {
+                document.getElementById("chkBadTxt208").style.display = "block";
+				if (navigator.appVersion.indexOf("MSIE 7.") != -1) { 
+					if (!document.addEventListener) {
+						$(this.chkBadTxt208.lastChild).css({ display: "none" });
+					}
+				}
+            }
+            //for 218
+            function removeCounter218() { document.getElementById("chkGoodTxt218").style.display = "none"; document.getElementById("chkBadTxt218").style.display = "none"; }
+            function addCounterGood218() {
+                document.getElementById("chkGoodTxt218").style.display = "block";
+				if (navigator.appVersion.indexOf("MSIE 7.") != -1) { 
+					if (!document.addEventListener) {
+						$(this.chkGoodTxt218.lastChild).css({ display: "none" });
+					}
+				}
+            }
+            function addCounterBad218() {
+                document.getElementById("chkBadTxt218").style.display = "block";
+				if (navigator.appVersion.indexOf("MSIE 7.") != -1) { 
+					if (!document.addEventListener) {
+						$(this.chkBadTxt218.lastChild).css({ display: "none" });
+					}
+				}
+            }
+            //for 228
+            function removeCounter228() {
+                document.getElementById("chkGoodTxt228").style.display = "none"; document.getElementById("chkBadTxt228").style.display = "none";
+            }
+            function addCounterGood228() {
+                document.getElementById("chkGoodTxt228").style.display = "block";
+				if (navigator.appVersion.indexOf("MSIE 7.") != -1) { 
+					if (!document.addEventListener) {
+						$(this.chkGoodTxt228.lastChild).css({ display: "none" });
+					}
+				}
+            }
+            function addCounterBad228() {
+                document.getElementById("chkBadTxt228").style.display = "block";
+				if (navigator.appVersion.indexOf("MSIE 7.") != -1) { 
+					if (!document.addEventListener) {
+						$(this.chkBadTxt228.lastChild).css({ display: "none" });
+					}
+				}
+            }
+            //for 238
+            function removeCounter238() {
+                document.getElementById("chkGoodTxt238").style.display = "none"; document.getElementById("chkBadTxt238").style.display = "none";
+            }
+            function addCounterGood238() {
+                document.getElementById("chkGoodTxt238").style.display = "block";
+				if (navigator.appVersion.indexOf("MSIE 7.") != -1) { 
+					if (!document.addEventListener) {
+						$(this.chkGoodTxt238.lastChild).css({ display: "none" });
+					}
+				}
+            }
+            function addCounterBad238() {
+                document.getElementById("chkBadTxt238").style.display = "block";
+				if (navigator.appVersion.indexOf("MSIE 7.") != -1) { 
+					if (!document.addEventListener) {
+						$(this.chkBadTxt238.lastChild).css({ display: "none" });
+					}
+				}
+            }
+            //for 248
+            function removeCounter248() {
+                document.getElementById("chkGoodTxt248").style.display = "none"; document.getElementById("chkBadTxt248").style.display = "none";
+            }
+            function addCounterGood248() {
+                document.getElementById("chkGoodTxt248").style.display = "block";
+				if (navigator.appVersion.indexOf("MSIE 7.") != -1) { 
+					if (!document.addEventListener) {
+						$(this.chkGoodTxt248.lastChild).css({ display: "none" });
+					}
+				}
+            }
+            function addCounterBad248() {
+                document.getElementById("chkBadTxt248").style.display = "block";
+				if (navigator.appVersion.indexOf("MSIE 7.") != -1) { 
+					if (!document.addEventListener) {
+						$(this.chkBadTxt248.lastChild).css({ display: "none" });
+					}
+				}
+            }
+            //for 258
+            function removeCounter258() {
+                document.getElementById("chkGoodTxt258").style.display = "none"; document.getElementById("chkBadTxt258").style.display = "none";
+            }
+            function addCounterGood258() {
+                document.getElementById("chkGoodTxt258").style.display = "block";
+				if (navigator.appVersion.indexOf("MSIE 7.") != -1) { 
+					if (!document.addEventListener) {
+						$(this.chkGoodTxt258.lastChild).css({ display: "none" });
+					}
+				}
+            }
+            function addCounterBad258() {
+                document.getElementById("chkBadTxt258").style.display = "block";
+				if (navigator.appVersion.indexOf("MSIE 7.") != -1) { 
+					if (!document.addEventListener) {
+						$(this.chkBadTxt258.lastChild).css({ display: "none" });
+					}
+				}
+            }
+			//for 268
+            function removeCounter268() {
+                document.getElementById("chkGoodTxt268").style.display = "none"; document.getElementById("chkBadTxt268").style.display = "none";
+            }
+            function addCounterGood268() {
+                document.getElementById("chkGoodTxt268").style.display = "block";
+				if (navigator.appVersion.indexOf("MSIE 7.") != -1) { 
+					if (!document.addEventListener) {
+						$(this.chkGoodTxt268.lastChild).css({ display: "none" });
+					}
+				}
+            }
+            function addCounterBad268() {
+                document.getElementById("chkBadTxt268").style.display = "block";
+                if (navigator.appVersion.indexOf("MSIE 7.") != -1) { 
+					if (!document.addEventListener) {
+						$(this.chkBadTxt268.lastChild).css({ display: "none" });
+					}
+				}
+            }
+			//for 278
+            function removeCounter278() {
+                document.getElementById("chkTxt278").style.display = "none"; document.getElementById("chkTxt278").style.display = "none";
+            }
+            function addCounter278() {
+                document.getElementById("chkTxt278").style.display = "block";
+                if (navigator.appVersion.indexOf("MSIE 7.") != -1) { 
+					if (!document.addEventListener) {
+						$(this.chkTxt278.lastChild).css({ display: "none" });
+					}
+				}
+            }
+        </script>
+        
+        <!-- Show alerts -->
+        <script type="text/javascript">
+            function alert208() {
+                if (document.getElementById("Field208_5").checked || document.getElementById("Field208_6").checked || document.getElementById("Field208_7").checked || document.getElementById("Field208_8").checked || document.getElementById("Field208_9").checked) {
+                    if (trim(document.getElementById("badTxt208").value) == null || trim(document.getElementById("badTxt208").value) == '') {
+                        alert("Message from Question 1 问题一中还有未完成项目\n\nYou have just indicated that the attitude and helpfulness of the booking team that dealt with you during the job assignment were not according to your liking. This is not at the level we would like our team to perform. Please let us know what was the reason for your dissatisfaction; this will help us to address the matter and to improve the performance in future.\n\n你刚才指出在执行此工作期间，预订团队的态度和给予你的帮助没有达到你的预期。这不是我们希望看到的团队工作表现，请让我们知道你不满意的原因，这将帮助我们找到问题所在从而提高今后的工作表现。");
+                    }
+                }
+
+                if (document.getElementById("Field208_0").checked) {
+                    if (trim(document.getElementById("goodTxt208").value) == null || trim(document.getElementById("goodTxt208").value) == '') {
+                        alert("Message from Question 1 问题一中还有未完成项目\n\nYou have rated the performance as “outstanding”. Please share with us why, so to allow us to pass the compliment to the team members which have contributed.\n\n你评价了团队的工作表现等级是“非常出色”。请和我们分享评分的缘由，这样可以让我们把好评传达给做出贡献的团队成员。");
+                    }
+                }
+            }
+            function alert218() {
+                if (document.getElementById("Field218_5").checked || document.getElementById("Field218_6").checked || document.getElementById("Field218_7").checked || document.getElementById("Field218_8").checked || document.getElementById("Field218_9").checked) {
+                    if (trim(document.getElementById("badTxt218").value) == null || trim(document.getElementById("badTxt218").value) == '') {
+                        alert("Message from Question 2 问题二中还有未完成项目\n\nYou have just indicated that our attitude and helpfulness of the technical team and management team that dealt with you during the job duration were not according to your liking. This is not at the level we would like our team to perform. Please let us know what was the reason for your dissatisfaction; this will help us to address the matter and to improve the performance in future.\n\n你刚才指出在执行此工作期间，技术团队和管理团队的态度和给予你的帮助没有达到你的预期。这不是我们希望看到的团队工作表现，请让我们知道你不满意的原因，这将帮助我们找到问题所在从而提高今后的工作表现。");
+                    }
+                }
+
+                if (document.getElementById("Field218_0").checked) {
+                    if (trim(document.getElementById("goodTxt218").value) == null || trim(document.getElementById("goodTxt218").value) == '') {
+                        alert("Message from Question 2 问题二中还有未完成项目\n\nYou have rated the performance as “outstanding”. Please share with us why, so to allow us to pass the compliment to the team members which have contributed.\n\n你评价了团队的工作表现等级是“非常出色”。请和我们分享评分的缘由，这样可以让我们把好评传达给做出贡献的团队成员。");
+                    }
+                }
+            }
+            function alert228() {
+                if (document.getElementById("Field228_5").checked || document.getElementById("Field228_6").checked || document.getElementById("Field228_7").checked || document.getElementById("Field228_8").checked || document.getElementById("Field228_9").checked) {
+                    if (trim(document.getElementById("badTxt228").value) == null || trim(document.getElementById("badTxt228").value) == '') {
+                        alert("Message from Question 3 问题三中还有未完成项目\n\nYou have just indicated that you were not satisfied with the quality, completeness, and usability of checklist and draft report provided to you. This is clearly not at a level we would wish to perform. Please state your reason for your dissatisfaction; your comments will allow us to improve and perform better in future.\n\n你刚才指出你不满意所接收到的验货清单和报告初稿的质量，它们的完整性和可用性较差。这显然不是我们希望看到的团队工作表现。请指出你不满意的原因，这将帮助我们进行改进从而提高今后的工作表现。");
+                    }
+                }
+
+                if (document.getElementById("Field228_0").checked) {
+                    if (trim(document.getElementById("goodTxt228").value) == null || trim(document.getElementById("goodTxt228").value) == '') {
+                        alert("Message from Question 3 问题三中还有未完成项目\n\nYou have rated the performance as “outstanding”. Please share with us why, so to allow us to pass the compliment to the team members which have contributed.\n\n你评价了团队的工作表现等级是“非常出色”。请和我们分享评分的缘由，这样可以让我们把好评传达给做出贡献的团队成员。");
+                    }
+                }
+            }
+            function alert238() {
+                if (document.getElementById("Field238_5").checked || document.getElementById("Field238_6").checked || document.getElementById("Field238_7").checked || document.getElementById("Field238_8").checked || document.getElementById("Field238_9").checked) {
+                    if (trim(document.getElementById("badTxt238").value) == null || trim(document.getElementById("badTxt238").value) == '') {
+                        alert("You have just indicated that you were not satisfied with the sufficient and complete information received for your job preparation and job execution. This is clearly not at the level we would like to perform. Please state the reason for your dissatisfaction; it is important for us to know how we can improve our performance in the future.\n\n你刚才指出你不满意所接收到的工作准备和作业执行资料的质量和完整性。这显然不是我们希望看到的团队工作表现。请指出你不满意的原因，这将帮助我们进行改进从而提高今后的工作表现。");
+                    }
+                }
+
+                if (document.getElementById("Field238_0").checked) {
+                    if (trim(document.getElementById("goodTxt238").value) == null || trim(document.getElementById("goodTxt238").value) == '') {
+                        alert("Message from Question 4\n\nYou have rated the performance as “outstanding”. Please share with us why, so to allow us to pass the compliment to the team members which have contributed.\n\n你评价了团队的工作表现等级是“非常出色”。请和我们分享评分的缘由，这样可以让我们把好评传达给做出贡献的团队成员。");
+                    }
+                }
+            }
+            function alert248() {
+                if (document.getElementById("Field248_5").checked || document.getElementById("Field248_6").checked || document.getElementById("Field248_7").checked || document.getElementById("Field248_8").checked || document.getElementById("Field248_9").checked) {
+                    if (trim(document.getElementById("badTxt248").value) == null || trim(document.getElementById("badTxt248").value) == '') {
+                        alert("Message from Question 5\n\nYou have just indicated that you were not satisfied with the attitude and helpfulness of the technical, booking, management team that dealt with during the report vetting period and after the job was completed. This is clearly not at a level we wish our team to perform. Please state the reasons why you were not satisfied. This will enable us to improve and perform better in future.\n\n你刚才指出你不满意在报告审阅期间和工作完成后预约、技术和管理团队对你态度和帮助。这显然不是我们希望看到的团队工作表现。请指出你不满意的原因，这将帮助我们进行改进从而提高今后的工作表现。");
+                    }
+                }
+
+                if (document.getElementById("Field248_0").checked) {
+                    if (trim(document.getElementById("goodTxt248").value) == null || trim(document.getElementById("goodTxt248").value) == '') {
+                        alert("Message from Question 5\n\nYou have rated the performance as “outstanding”. Please share with us why, so to allow us to pass the compliment to the team members which have contributed.\n\n你评价了团队的工作表现等级是“非常出色”。请和我们分享评分的缘由，这样可以让我们把好评传达给做出贡献的团队成员。");
+                    }
+                }
+            }
+            function alert258() {
+                if (document.getElementById("Field258_5").checked || document.getElementById("Field258_6").checked || document.getElementById("Field258_7").checked || document.getElementById("Field258_8").checked || document.getElementById("Field258_9").checked) {
+                    if (trim(document.getElementById("badTxt258").value) == null || trim(document.getElementById("badTxt258").value) == '') {
+                        alert("Message from Question 6\n\nYou have just indicated that the factory has not been informed of our inspection and the inspection standard, inspection preparation, and not well informed and prepared. This is clearly not wanted. Kindly, state the reasons for your dissatisfaction. This will allow us to improve the situation and have the factory better informed in the future.\n\n你刚才指出此次验货的工厂没有被提前通知同时验货标准和验货准备工作也没有很好的履行和完成。这显然不是我们想要的。请指出你不满意的原因，这将帮助我们改进现状从而有效的通知工厂为相关验货做好准备。");
+                    }
+                }
+
+                if (document.getElementById("Field258_0").checked) {
+                    if (trim(document.getElementById("goodTxt258").value) == null || trim(document.getElementById("goodTxt258").value) == '') {
+                        alert("Message from Question 6\n\nYou have rated the performance as “outstanding”. Please share with us why, so to allow us to pass the compliment to the parties which have contributed.\n\n你评价了团队的工作表现等级是“非常出色”。请和我们分享评分的缘由，这样可以让我们把好评传达给做出贡献的团队成员。");
+                    }
+                }
+            }
+			function alert268() {
+                if (document.getElementById("Field268_5").checked || document.getElementById("Field268_6").checked || document.getElementById("Field268_7").checked || document.getElementById("Field268_8").checked || document.getElementById("Field268_9").checked) {
+                    if (trim(document.getElementById("badTxt268").value) == null || trim(document.getElementById("badTxt268").value) == '') {
+                        alert("Message from Question 7\n\nYou have just indicated that the factory staff didn't act professional and friendly, or not in full compliance to our PL-003 Code of Conduct and our PL-011 Anti-Bribery Fair Trade Policy. Please, state the reasons for your dissatisfaction. This will allow us to address the issue with the client and / or manufacturer in order to improve for the better in the future.\n\n你刚才指出此次验货的工厂的工作人员没有采取专业和友好的行为和态度，或他们也没有完全遵守和履行我们的PL- 003行为准则和PL- 011反贿赂公平贸易政策。请指出你不满意的原因，这将帮助我们找到问题所在从而提升未来的工作质量。");
+                    }
+                }
+
+                if (document.getElementById("Field268_0").checked) {
+                    if (trim(document.getElementById("goodTxt268").value) == null || trim(document.getElementById("goodTxt268").value) == '') {
+                        alert("Message from Question 7\n\nYou have rated the performance as “outstanding”. Please share with us why, so to allow us to pass the compliment to the parties which have contributed.\n\n你评价了团队的工作表现等级是“非常出色”。请和我们分享评分的缘由，这样可以让我们把好评传达给做出贡献的团队成员。");
+                    }
+                }
+            }
+        </script>
+        
+        <!--Feedback validate JS -->
+		<script type="text/javascript">
+		<!--
+			function chkRadio208(){
+				var radios208 = document["fbMain"].elements["Field208"];
+				for (var i = 0; i < radios208.length; i++) {
+					if (radios208[i].checked) {
+						return true;
+					}
+				}
+				return false;
+			}
+
+			function chkRadion208BadCmt() {
+			    if (document.getElementById("Field208_5").checked || document.getElementById("Field208_6").checked || document.getElementById("Field208_7").checked || document.getElementById("Field208_8").checked || document.getElementById("Field208_9").checked) {
+			        if (trim(document.getElementById("badTxt208").value) == null || trim(document.getElementById("badTxt208").value) == '') {
+			            return false;
+                    }
+			    }
+			    return true;
+			}
+
+			function chkRadio208GoodCmt() {
+			    if (document.getElementById("Field208_0").checked) {
+			        if (trim(document.getElementById("goodTxt208").value) == null || trim(document.getElementById("goodTxt208").value) == '') {
+			            return false;
+			        }
+			    }
+			    return true;
+			}
+
+			function chkRadio218(){
+				var radios218 = document["fbMain"].elements["Field218"];
+				for (var i = 0; i < radios218.length; i++) {
+					if (radios218[i].checked) {
+						return true;
+					}
+				}
+				return false;
+            }
+
+            function chkRadion218BadCmt() {
+                if (document.getElementById("Field218_5").checked || document.getElementById("Field218_6").checked || document.getElementById("Field218_7").checked || document.getElementById("Field218_8").checked || document.getElementById("Field218_9").checked) {
+                    if (trim(document.getElementById("badTxt218").value) == null || trim(document.getElementById("badTxt218").value) == '') {
+                        return false;
+                    }
+                }
+                return true;
+            }
+
+            function chkRadio218GoodCmt() {
+                if (document.getElementById("Field218_0").checked) {
+                    if (trim(document.getElementById("goodTxt218").value) == null || trim(document.getElementById("goodTxt218").value) == '') {
+                        return false;
+                    }
+                }
+                return true;
+            }
+
+			function chkRadio228(){
+				var radios228 = document["fbMain"].elements["Field228"];
+				for (var i = 0; i < radios228.length; i++) {
+					if (radios228[i].checked) {
+						return true;
+					}
+				}
+				return false;
+            }
+
+            function chkRadion228BadCmt() {
+                if (document.getElementById("Field228_5").checked || document.getElementById("Field228_6").checked || document.getElementById("Field228_7").checked || document.getElementById("Field228_8").checked || document.getElementById("Field228_9").checked) {
+                    if (trim(document.getElementById("badTxt228").value) == null || trim(document.getElementById("badTxt228").value) == '') {
+                        return false
+                    }
+                }
+                return true;
+            }
+
+            function chkRadio228GoodCmt() {
+                if (document.getElementById("Field228_0").checked) {
+                    if (trim(document.getElementById("goodTxt228").value) == null || trim(document.getElementById("goodTxt228").value) == '') {
+                        return false;
+                    }
+                }
+                return true;
+            }
+
+
+			function chkRadio238(){
+				var radios238 = document["fbMain"].elements["Field238"];
+				for (var i = 0; i < radios238.length; i++) {
+					if (radios238[i].checked) {
+						return true;
+					}
+				}
+				return false;
+			}
+
+			function chkRadion238BadCmt() {
+			    if (document.getElementById("Field238_5").checked || document.getElementById("Field238_6").checked || document.getElementById("Field238_7").checked || document.getElementById("Field238_8").checked || document.getElementById("Field238_9").checked) {
+			        if (trim(document.getElementById("badTxt238").value) == null || trim(document.getElementById("badTxt238").value) == '') {
+			            return false;
+			        }
+			    }
+			    return true;
+			}
+
+			function chkRadio238GoodCmt() {
+			    if (document.getElementById("Field238_0").checked) {
+			        if (trim(document.getElementById("goodTxt238").value) == null || trim(document.getElementById("goodTxt238").value) == '') {
+			            return false;
+			        }
+			    }
+			    return true;
+			}
+
+			function chkRadio248(){
+				var radios248 = document["fbMain"].elements["Field248"];
+				for (var i = 0; i < radios248.length; i++) {
+					if (radios248[i].checked) {
+						return true;
+					}
+				}
+				return false;
+			}
+
+			function chkRadion248BadCmt() {
+			    if (document.getElementById("Field248_5").checked || document.getElementById("Field248_6").checked || document.getElementById("Field248_7").checked || document.getElementById("Field248_8").checked || document.getElementById("Field248_9").checked) {
+			        if (trim(document.getElementById("badTxt248").value) == null || trim(document.getElementById("badTxt248").value) == '') {
+			            return false;
+			        }
+			    }
+			    return true;
+			}
+
+			function chkRadio248GoodCmt() {
+			    if (document.getElementById("Field248_0").checked) {
+			        if (trim(document.getElementById("goodTxt248").value) == null || trim(document.getElementById("goodTxt248").value) == '') {
+			            return false;
+			        }
+			    }
+			    return true;
+			}
+
+			function chkRadio258(){
+				var radios258 = document["fbMain"].elements["Field258"];
+				for (var i = 0; i < radios258.length; i++) {
+					if (radios258[i].checked) {
+						return true;
+					}
+				}
+				return false;
+            }
+
+			function chkRadion258BadCmt() {
+			    if (document.getElementById("Field258_5").checked || document.getElementById("Field258_6").checked || document.getElementById("Field258_7").checked || document.getElementById("Field258_8").checked || document.getElementById("Field258_9").checked) {
+			        if (trim(document.getElementById("badTxt258").value) == null || trim(document.getElementById("badTxt258").value) == '') {
+			            return false;
+			        }
+			    }
+			    return true;
+			}
+
+			function chkRadio258GoodCmt() {
+			    if (document.getElementById("Field258_0").checked) {
+			        if (trim(document.getElementById("goodTxt258").value) == null || trim(document.getElementById("goodTxt258").value) == '') {
+                        return false
+			        }
+                }
+                return true;
+			}
+
+			function chkRadio268(){
+				var radios268 = document["fbMain"].elements["Field268"];
+				for (var i = 0; i < radios268.length; i++) {
+					if (radios268[i].checked) {
+						return true;
+					}
+				}
+				return false;
+            }
+
+			function chkRadion268BadCmt() {
+			    if (document.getElementById("Field268_5").checked || document.getElementById("Field268_6").checked || document.getElementById("Field268_7").checked || document.getElementById("Field268_8").checked || document.getElementById("Field268_9").checked) {
+			        if (trim(document.getElementById("badTxt268").value) == null || trim(document.getElementById("badTxt268").value) == '') {
+			            return false;
+			        }
+			    }
+			    return true;
+			}
+
+			function chkRadio268GoodCmt() {
+			    if (document.getElementById("Field268_0").checked) {
+			        if (trim(document.getElementById("goodTxt268").value) == null || trim(document.getElementById("goodTxt268").value) == '') {
+                        return false
+			        }
+                }
+                return true;
+			}
+
+    		function vdFrm() {
+				var msg = "";
+				if (!chkRadio268GoodCmt() || !chkRadion268BadCmt()) { 
+					alert268();
+					return false;
+				} else {
+    		        if (!chkRadio208()) { msg += "Please rate us on Question 1.\n问题一为空，请打分。\n"; }
+    		        if (!chkRadio208GoodCmt()) { msg += "Please leave your comment for Question 1.\n问题一建议栏为空，请留下你的意见。\n"; }
+    		        if (!chkRadion208BadCmt()) { msg += "Please leave your comment for Question 1.\n问题一建议栏为空，请留下你的意见。\n"; }
+    		        if (!chkRadio218()) { msg += "Please rate us on Question 2.\n问题二为空，请打分。\n"; }
+    		        if (!chkRadio218GoodCmt()) { msg += "Please leave your comment for Question 2.\n问题二建议栏为空，请留下你的意见。\n"; }
+    		        if (!chkRadion218BadCmt()) { msg += "Please leave your comment for Question 2.\n问题二建议栏为空，请留下你的意见。\n"; }
+    		        if (!chkRadio228()) { msg += "Please rate us on Question 3.\n问题三为空，请打分。\n"; }
+    		        if (!chkRadio228GoodCmt()) { msg += "Please leave your comment for Question 3.\n问题三建议栏为空，请留下你的意见。\n"; }
+    		        if (!chkRadion228BadCmt()) { msg += "Please leave your comment for Question 3.\n问题三建议栏为空，请留下你的意见。\n"; }
+    		        if (!chkRadio238()) { msg += "Please rate us on Question 4.\n问题四为空，请打分。\n"; }
+    		        if (!chkRadio238GoodCmt()) { msg += "Please leave your comment for Question 4.\n问题四建议栏为空，请留下你的意见。\n"; }
+    		        if (!chkRadion238BadCmt()) { msg += "Please leave your comment for Question 4.\n问题四建议栏为空，请留下你的意见。\n"; }
+    		        if (!chkRadio248()) { msg += "Please rate us on Question 5.\n问题五为空，请打分。\n"; }
+    		        if (!chkRadio248GoodCmt()) { msg += "Please leave your comment for Question 5.\n问题五建议栏为空，请留下你的意见。\n"; }
+    		        if (!chkRadion248BadCmt()) { msg += "Please leave your comment for Question 5.\n问题五建议栏为空，请留下你的意见。\n"; }
+    		        if (!chkRadio258()) { msg += "Please rate us on Question 6.\n问题六为空，请打分。\n"; }
+    		        if (!chkRadio258GoodCmt()) { msg += "Please leave your comment for Question 6.\n问题六建议栏为空，请留下你的意见。\n"; }
+    		        if (!chkRadion258BadCmt()) { msg += "Please leave your comment for Question 6.\n问题六建议栏为空，请留下你的意见。\n"; }
+    		        if (!chkRadio268()) { msg += "Please rate us on Question 7.\n问题七为空，请打分。\n"; }
+    		        if (!chkRadio268GoodCmt()) { msg += "Please leave your comment for Question 7.\n问题七建议栏为空，请留下你的意见。\n"; }
+    		        if (!chkRadion268BadCmt()) { msg += "Please leave your comment for Question 7.\n问题七建议栏为空，请留下你的意见。\n"; }
+				}
+				if (!chkRadio208() || !chkRadio208GoodCmt() || !chkRadion208BadCmt() || !chkRadio218() || !chkRadio218GoodCmt() || !chkRadion218BadCmt() || !chkRadio228() || !chkRadio228GoodCmt() || !chkRadion228BadCmt() || !chkRadio238() || !chkRadio238GoodCmt() || !chkRadion238BadCmt() || !chkRadio248() || !chkRadio248GoodCmt() || !chkRadion248BadCmt() || !chkRadio258() || !chkRadio258GoodCmt() || !chkRadion258BadCmt() || !chkRadio268() || !chkRadio268GoodCmt() || !chkRadion268BadCmt())
+				{
+					if (msg != "") {
+    		            alert(msg);
+    		            return false;
+    		        } else {
+    		            return true;
+    		        }
+                    return false;
+                } 
+                else {
+					return true;
+                }
+			}
+		//-->
+      </script>
   </head>
   <body>
     <div class="wrapper">
