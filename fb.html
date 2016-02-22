@@ -63,7 +63,7 @@
         
         <script type="text/javascript">
             // solve the issue for background color not showing for textarea on Chrome and Safari
-            // if ((navigator.appVersion.indexOf("chrome") != -1) || (navigator.appVersion.indexOf("safari") != -1)) {
+            if ((navigator.appVersion.indexOf("chrome") != -1) || (navigator.appVersion.indexOf("safari") != -1)) {
                 //208
                 function addBgFocusedGoodForChromeSafari208() { $(this.foli208).removeClass("focused"); $(this.foli208).removeClass("focusedBad"); $(this.foli208).addClass("focusedGood"); }
                 function addBgFocusedForChromeSafari208() { $(this.foli208).removeClass("focusedGood"); $(this.foli208).removeClass("focusedBad"); $(this.foli208).addClass("focused"); }
@@ -94,7 +94,7 @@
                 function addBgFocusedBadForChromeSafari268() { $(this.foli268).removeClass("focusedGood"); $(this.foli268).removeClass("focused"); $(this.foli268).addClass("focusedBad"); }
 				//278
                 function addBgFocusedForChromeSafari278() { $(this.foli278).removeClass("focusedGood"); $(this.foli278).removeClass("focusedBad"); $(this.foli278).addClass("focused"); }
-            //}
+            }
         </script>
         
         <script type="text/javascript">
