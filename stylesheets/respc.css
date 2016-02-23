@@ -5,6 +5,18 @@ html {
 body {
 	margin:0;
 }
+ul {
+	list-style-type:none;
+	padding:0;
+	margin:0;
+}
+ul li {
+	padding:6px 2px 6px 16px;
+	border-bottom:1px solid #ddd;
+}
+ul li:last-child {
+	border-bottom:none;
+}
 .demo-image {
 	position:relative;
 }
@@ -20,10 +32,38 @@ img.demo-image,.demo-image img {
 	font-size:20px;
 }
 .normal {
-    float: left;
-    margin: 5px;
-    padding: 15px;
-    width: 300px;
-    height: 500px;
-    border: 1px solid black;
+    	float: left;
+    	margin: 5px;
+    	padding: 15px;
+    	width: 300px;
+    	height: 500px;
+    	border: 1px solid black;
+}
+.top {
+	position:fixed;
+    	width:100%;
+    	z-index:1;
+    	top:0
+}
+.nav a {
+    	text-decoration:none !important;
+    	-webkit-transition:all 0.3s ease;
+    	transition:all 0.3s ease;
+    	padding:4px 2px 4px 16px;
+    	display:block
+}
+.nav a:hover {
+	background-color:#ccc;
+}
+.nav {
+	height:100%;
+	width:200px;
+	background-color:#fff;
+	position:fixed !important;
+	z-index:1;
+	overflow:auto;
+}
+.logo {
+	color:#fff !important;
+	background-color:#009688 !important
 }
