@@ -127,11 +127,9 @@ img.demo-image,.demo-image img {
 	font-size:20px;
 }
 .container {
-	display: block;
-	width: 100%;
-	height: auto;
-	margin: auto;
-	padding: 10px;
+	position: fixed; /* or absolute */
+  	top: 50%;
+  	left: 50%;
 }
 .normal {
     	float: left;
