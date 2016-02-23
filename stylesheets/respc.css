@@ -126,7 +126,13 @@ img.demo-image,.demo-image img {
 	color:#fff;
 	font-size:20px;
 }
-
+.container {
+	display: block;
+	width: 100%;
+	height: auto;
+	margin: auto;
+	padding: 10px;
+}
 .normal {
     	float: left;
     	margin: 5px;
