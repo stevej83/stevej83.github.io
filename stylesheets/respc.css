@@ -1,222 +1,222 @@
-@import "compass/css3";
-
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
-
 * {
-   box-sizing:border-box;
-}
-
-html,
-body {
-    width:100%;
-    height:100%;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
 }
 
 body {
-    margin:.55em;
-    color: rgb(0, 0, 0);
+    background: #eee;
+    color: #444;
+    -webkit-font-smoothing: antialiased;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    font-weight: 300;
+    font-weight: 400;
+    height: auto !important;
+    height: 100%;
+    min-height: 100%;
+    text-rendering: optimizeLegibility;
 }
 
-/* custom scrollbar */
-::-webkit-scrollbar {
-  width: .95em;
-}
- 
-::-webkit-scrollbar-track {
-  background-color: rgba(217, 217, 217, .5);
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(184, 184, 184, .5);
-  box-shadow:
-    inset .05em .05em 0 rgba(0, 0, 0, .1),
-    inset 0 -.05em 0 rgba(0, 0, 0, .07)
-  ;
+header {
+    background-color: rgb(140, 193, 193);
+    border-bottom: 1px solid rgba(0,0,0,.15);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
 
-/* dummy content */
-.content {
-  float:left;
-  font: 1em 'Open Sans', sans-serif;
-  margin:.75em 0 0 0;
-  transition: margin .3s ease-in-out;
-    
-  > p {
-    margin:.25em 0 .75em 0;      
-  }
-}
-
-/* Advanced Checkbox Hack */
-body { -webkit-animation: bugfix infinite 1s; }
-@-webkit-keyframes bugfix { from {padding:0;} to {padding:0;} }
-
-input[type=checkbox] {
-  position: absolute;
-  top: -9999px;
-  left: -9999px;
-}
-
-label {
-  position: absolute;
-  left:0;
-  display:none;
-  width:2em;
-  height:2.25em;
-  padding:.35em;
-  font-size:1.1em;
-  color:#fff;
-  transition:color .3s ease-in-out;
-  cursor: pointer;
-  user-select:none;
-  margin:0;
-  background:rgba(0, 0, 0, .4); 
-}
-
-/* big screens */
-nav[role="off-canvas"] {
-    position:relative;
-    width: 50em;
-    margin: 0 auto;
-    transition-duration: .3s, .5s;
-    transition-timing-function: ease-in-out;
-    transition-property: left, opacity, box-shadow;
-    
-    a {
-      color:#fff;
-      text-decoration:none;
-      font: 1.4em 'Open Sans', sans-serif;
-      transition:color .3s ease-in-out;
-      display:table-cell;
-      vertical-align: middle;
+    header > div#logo {
+        line-height: 70px;
+        position: relative;
     }
     
-    ul {
-      padding: 0;  
-      margin: 0 auto;  
-      width:100%;
-    
-      > li {
-        float:left;
-        padding:.55em .55em;
-        width:8em;
-        height:8em;
-        margin:.5em;
-        opacity:.8;
-    
-        text-transform:uppercase;
-        display: table;
-        background:hsla(11, 94%, 50%, .65);
-        cursor: pointer;
-    
-        text-align:center;
-        transition-duration: .3s;
-        transition-timing-function: ease-in-out;
-        transition-property: box-shadow, color, opacity, padding-left;
-        cursor: pointer;
-    
-        &:hover {
-            color:#fff;
-            opacity:1;
-            box-shadow:0 0 0 .5em rgba(255, 255, 255, .95);
-    
-          > a {
-             color:#fff;
-          }
-        }
-
-        &:nth-child(2) {
-          background:hsla(44, 94%, 50%, .65);
-        }
-        &:nth-child(3) {
-          background:hsla(114, 94%, 50%, .65);  
-        }
-        &:nth-child(4) {
-          background:hsla(184, 94%, 50%, .65);  
-        }
-        &:nth-child(5) {
-          background:hsla(224, 94%, 50%, .65);  
-        }
-      }
+    header > .menuDown {
+        box-shadow: 0 3px 5px rgba(0,0,0,.15);
     }
-}
-
-/* small screens */
-@media screen and (max-width: 44em) {
-  $menu_width: 20em;
-  $content_offset : .5em;
     
-  html,
-  body {
-    margin:0;
-    overflow-x:hidden;
-  }
-
-  .content {
-    margin:2.5em .5em 0 .5em;
-  }
-    
-  nav[role="off-canvas"] {
-    position:absolute;
-    top:3em;
-    left:-$menu_width;
-    width: $menu_width;
-    opacity:0;
-    
-    ul > li {
-      height:100%;
-      width:100%;
-      text-align:left;
-      margin:0;
-    
-      &:hover {
-        box-shadow:inset 0 0 0 .15em rgba(255, 255, 255, .45);
-      }
+    header > .menuUp {
+        box-shadow: none;
     }
-  }
-
-  label {
-    display:block;
-  }
-
-  label:after {
-    position: absolute;
-    right: .25em;  
-    top: 0;
-    content:"\2261";
-    font-size:1.8em;
-  }
-
-  label:hover,
-  input:checked ~ label {
-    color:#000;
-  }
-
-  input:checked ~ nav[role="off-canvas"] {
-    opacity:1;
-    left:0;
-    box-shadow:-30em 0 0 30em rgba(0, 0, 0, .3);
     
-    ul > li {
-      padding: .55em .55em .55em 1.5em;
-       
-      &:hover {
-        padding-left:3.5em;
-      }
+        header > div#logo > h1 {
+            color: white;
+            font-weight: 300;
+            text-transform: lowercase;
+        }
         
-      &:after {
-        position:absolute;
-        right:.25em;
-        content:"\203A";
-        font: bold 1.4em sans-serif;
-        color:inherit;
-      }
-    }
-  }
+        header > div#logo > div#navToggle {
+            background-color: rgba(0,0,0,.15);
+            position: absolute;
+            right: 0;
+            top: 0;
+            transition: 300ms all ease;
+        }
+            
+            header > div#logo > div#navToggle:hover {
+                background-color: rgba(0,0,0,.1);
+            }
+            
+            header > div#logo > div#navToggle > a {
+                color: rgba(255,255,255,.85);
+                display: block;
+                font-size: 0.85em;
+                font-weight: 600;
+                padding: 0 2.5rem;
+                text-decoration: none;
+                transition: 300ms all ease;
+            }
+            
+                header > div#logo > div#navToggle:hover > a {
+                    color: rgba(255,255,255,1);
+                }
 
-  input:checked ~ .content {
-    margin-left: $menu_width + $content_offset;
-    margin-right:-($menu_width + $content_offset);
-  }
+    header > nav {
+        background-color: white;
+        display: none;
+        flex: 1;
+        transform: 300ms all ease;
+    }
+    
+        header nav > ul {
+            list-style-type: none;    
+        }
+        
+            header nav > ul > li {
+                border-bottom: 1px dotted rgba(0,0,0,.1);
+                position: relative;
+            }
+            
+                header nav > ul > li:last-of-type {
+                    border-bottom: none;    
+                }
+            
+                header nav > ul > li > a {
+                    display: block;
+                    color: rgba(0,0,0,.65);
+                    font-weight: 700;
+                    padding: 1.5rem 0;
+                    text-decoration: none;
+                    transition: 250ms all ease;
+                }
+                
+                    header nav > ul > li > a span.toggle {
+                        background-color: rgba(0,0,0,.05);
+                        border-radius: 3rem;
+                        color: rgba(0,0,0,.25);
+                        font-size: 0.75em;
+                        font-weight: 500;
+                        padding: 2px 8px;
+                        text-transform: lowercase;    
+                    }
+                    
+                    header nav > ul > li > a span.caret {
+                        display: none;
+                    }
+                
+                    header > nav > ul > li:hover > a {
+                        color: rgb(140, 193, 193);  
+                    }
+                
+            header > nav > ul > li > nav {
+                background-color: rgb(51,51,51);
+                border-radius: 1.5em;
+                box-shadow: 0 2px 8px rgba(0,0,0,.6);
+                display: none;
+                overflow: hidden;
+                position: absolute;
+                right: 5%;
+                width: 90%;
+                z-index: 100;
+            }
+            
+                header > nav > ul > li > nav > ul > li > a {
+                    color: rgba(255,255,255,.85);
+                    transition: 300ms all ease;
+                }
+                
+                    header > nav > ul > li > nav > ul > li:hover > a {
+                        background-color: rgba(0,0,0,.6);
+                        color: rgba(255,255,255,1);
+                    }
+
+/* Medium screens */
+@media all and (min-width: 600px) {
+    header > div#logo > div#navToggle {
+        display: none;    
+    }
+    
+    header {
+        background-color: white;
+        flex-direction: row;
+        line-height: 90px;
+        padding: 0 3rem;
+        position: fixed;
+        text-align: left;
+        width: 100%;
+    }
+    
+        header > div#logo {
+            background-color: transparent;
+            line-height: 90px;
+        }
+    
+            header > div#logo > h1 {
+                color: rgb(140, 193, 193);
+            }
+            
+    header > nav {
+        background-color: transparent;
+        display: block;
+    }
+    
+        header > nav > ul {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: flex-end;    
+        }
+        
+            header nav > ul > li {
+                border-bottom: none;
+            }
+    
+                header nav > ul > li > a {
+                    padding: 0 1.25rem;
+                }
+                    
+                    header nav > ul > li > a span.toggle {
+                        display: none;    
+                    }
+                    
+                    header nav > ul > li > a span.caret {
+                        border-bottom: 4px solid transparent;
+                        border-top: 4px solid rgba(0,0,0,.65);
+                        border-right: 4px solid transparent;
+                        border-left: 4px solid transparent;
+                        border-radius: 1px;
+                        content: "";
+                        display: inline-block;
+                        height: 0;
+                        margin: 0 0 0 .25rem;
+                        transition: 250ms all ease;
+                        width: 0;
+                        vertical-align: middle;
+                    }
+                    
+                        header nav > ul > li:hover > a span.caret {
+                            border-top-color: rgb(140, 193, 193);
+                            transform: rotate(270deg); 
+                        }
+    
+    header > nav > ul > li:hover > nav {
+        background-color: rgb(51,51,51);
+        border-radius: .25em;
+        box-shadow: 0 2px 8px rgba(0,0,0,.6);
+        display: block;
+        line-height: 3em;
+        right: -50%;
+        width: 196px;
+    }
 }
 
 
