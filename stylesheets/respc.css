@@ -1,0 +1,29 @@
+html {
+	-ms-text-size-adjust:100%;
+	-webkit-text-size-adjust:100%;
+}
+body {
+	margin:0;
+}
+.demo-image {
+	position:relative;
+}
+img.demo-image,.demo-image img {
+	max-width:100%;
+	height:auto;
+}
+.demo-image .demo-title {
+	position:absolute;
+	bottom:8px;
+	left:16px;
+	color:#fff;
+	font-size:20px;
+}
+.normal {
+    float: left;
+    margin: 5px;
+    padding: 15px;
+    width: 300px;
+    height: 500px;
+    border: 1px solid black;
+}
